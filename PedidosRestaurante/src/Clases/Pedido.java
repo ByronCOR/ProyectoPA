@@ -11,6 +11,7 @@ package Clases;
 public class Pedido {
 
     private int idPed;
+    private String fechaHoraRegistro;
     private String codigo;
     private String estado;
     private String direccion_entrega;
@@ -20,11 +21,14 @@ public class Pedido {
     public Pedido() {
     }
 
-    public Pedido(String codigo,
+    public Pedido(String fechaHoraRegistro,
+            String codigo,
             String estado,
             String direccion_entrega,
             double total,
             Cliente cliente) {
+
+        this.fechaHoraRegistro = fechaHoraRegistro;
         this.codigo = codigo;
         this.estado = estado;
         this.direccion_entrega = direccion_entrega;
@@ -56,6 +60,10 @@ public class Pedido {
         this.cliente = cliente;
     }
 
+    public void setFechaHoraRegistro(String fechaHoraRegistro) {
+        this.fechaHoraRegistro = fechaHoraRegistro;
+    }
+
     public int getIdPed() {
         return idPed;
     }
@@ -80,14 +88,13 @@ public class Pedido {
         return cliente;
     }
 
+    public String getFechaHoraRegistro() {
+        return fechaHoraRegistro;
+    }
+
     @Override
     public String toString() {
-        return "Pedido{" + "idPed=" + idPed
-                + ", codigo=" + codigo
-                + ", estado=" + estado
-                + ", direccion_entrega=" + direccion_entrega
-                + ", total=" + total
-                + ", cliente=" + cliente + '}';
+        return "Pedido{" + "idPed=" + idPed + ", fechaHoraRegistro=" + fechaHoraRegistro + ", codigo=" + codigo + ", estado=" + estado + ", direccion_entrega=" + direccion_entrega + ", total=" + total + ", cliente=" + cliente + '}';
     }
 
 }

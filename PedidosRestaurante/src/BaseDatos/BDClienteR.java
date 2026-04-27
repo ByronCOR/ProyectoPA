@@ -17,14 +17,15 @@ public class BDClienteR {
     ConexionR BLcon= new ConexionR();
     
     public int InsertarCliente (Cliente objCliente) throws ClassNotFoundException, SQLException{
-    String Sentencia ="INSERT INTO Cliente(nombre, correo, telefono, direccion, cedula)"
-            +"VALUES(?,?,?,?,?)";
+    String Sentencia ="INSERT INTO Cliente(nombres, apellidos, email, telefono, direccion, cedula)"
+            +"VALUES(?,?,?,?,?,?)";
     PreparedStatement ps =BLcon.getConnection().prepareStatement(Sentencia);
-    ps.setString(1, objCliente.getNombre());
-    ps.setString(2, objCliente.getCorreo());
-    ps.setString(3, objCliente.getTelefono());
-    ps.setString(4, objCliente.getDireccion());
-    ps.setString(5, objCliente.getCedula());
+    ps.setString(1, objCliente.getNombres());
+    ps.setString(1, objCliente.getApellidos());
+    ps.setString(3, objCliente.getCorreo());
+    ps.setString(4, objCliente.getTelefono());
+    ps.setString(5, objCliente.getDireccion());
+    ps.setString(6, objCliente.getCedula());
     return ps.executeUpdate();
     }
     

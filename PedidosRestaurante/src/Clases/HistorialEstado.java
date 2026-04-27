@@ -14,15 +14,17 @@ public class HistorialEstado {
     private String estado_anterior;
     private String fecha;
     private Pedido pedido;
+    private Usuario usuario;
 
     public HistorialEstado() {
     }
 
-    public HistorialEstado(String estado_actual, String estado_anterior, String fecha, Pedido pedido) {
+    public HistorialEstado(String estado_actual, String estado_anterior, String fecha, Pedido pedido, Usuario usuario) {
         this.estado_actual = estado_actual;
         this.estado_anterior = estado_anterior;
         this.fecha = fecha;
         this.pedido = pedido;
+        this.usuario = usuario;
     }
 
     public void setIdHistorial(int idHistorial) {
@@ -45,6 +47,10 @@ public class HistorialEstado {
         this.pedido = pedido;
     }
 
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
     public int getIdHistorial() {
         return idHistorial;
     }
@@ -65,15 +71,21 @@ public class HistorialEstado {
         return pedido;
     }
 
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
     @Override
     public String toString() {
         return "HistorialEstado{" + "idHistorial=" + idHistorial 
                 + ", estado_actual=" + estado_actual 
                 + ", estado_anterior=" + estado_anterior 
                 + ", fecha=" + fecha 
-                + ", pedido=" + pedido + '}';
+                + ", pedido=" + pedido 
+                + ", usuario=" + usuario + '}';
     }
-    
+
+   
     
     
     

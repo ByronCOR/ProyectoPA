@@ -1,0 +1,52 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package BaseDatos;
+
+import Clases.Cliente;
+import Clases.Pedido;
+import Clases.Producto;
+import Clases.Usuario;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+/**
+ *
+ * @author bdcordova
+ */
+public class BDPedido {
+
+    ConexionR BLcon = new ConexionR();
+
+    public int InsertarPedido(Pedido objPedido) throws ClassNotFoundException,
+            SQLException {
+        String Sentencia = "INSERT INTO Pedido("
+                + "fechaHoraRegistro,"
+                + "codigoPedido,"
+                + "direccionEntrega,"
+                + "total,"
+                + "estado,"
+                + "idCliente)"
+                + "VALUES(?,?,?,?,?,?)";
+        PreparedStatement ps = BLcon.getConnection().prepareStatement(Sentencia);
+        ps.setString(1, objPedido.getFechaHoraRegistro());
+        ps.setString(2, objPedido.getCodigo());
+        ps.setString(3, objPedido.getDireccion_entrega());
+        ps.setDouble(4, objPedido.getTotal());
+        ps.setString(5, objPedido.getEstado());
+        ps.setInt(6, objPedido.getCliente().getIdClie());
+
+        return ps.executeUpdate();
+    }
+
+    public ResultSet BuscarPedidoCodigo(Pedido objPedido) throws ClassNotFoundException,
+            SQLException {
+        String Sentencia = "SELECT * FROM Pedido WHERE codigoPedido = ?";
+        PreparedStatement ps = BLcon.getConnection().prepareStatement(Sentencia);
+        ps.setString(1, objPedido.getCodigo());
+        return ps.executeQuery();
+    }
+
+}

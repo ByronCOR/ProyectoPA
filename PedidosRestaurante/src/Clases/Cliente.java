@@ -11,7 +11,8 @@ package Clases;
 public class Cliente {
     
     private int idClie;
-    private String nombre;
+    private String nombres;
+    private String apellidos;
     private String correo;
     private String telefono;
     private String direccion;
@@ -20,23 +21,30 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente( String nombre, String correo, String telefono, 
-            String direccion, String cedula) {
-        this.nombre = nombre;
+    public Cliente(String nombres, String apellidos, String correo, String telefono, String direccion, String cedula) {
+        this.nombres = nombres;
+        this.apellidos = apellidos;
         this.correo = correo;
         this.telefono = telefono;
         this.direccion = direccion;
         this.cedula = cedula;
     }
 
+
+
     public void setIdClie(int idClie) {
         this.idClie = idClie;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
 
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    
     public void setCorreo(String correo) {
         this.correo = correo;
     }
@@ -57,9 +65,15 @@ public class Cliente {
         return idClie;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombres() {
+        return nombres;
     }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+  
 
     public String getCorreo() {
         return correo;
@@ -79,14 +93,10 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{" + "idClie=" + idClie 
-                + ", nombre=" + nombre 
-                + ", correo=" + correo 
-                + ", telefono=" + telefono 
-                + ", direccion=" + direccion 
-                + ", cedula=" + cedula + '}';
+        return "Cliente{" + "idClie=" + idClie + ", nombres=" + nombres + ", apellidos=" + apellidos + ", correo=" + correo + ", telefono=" + telefono + ", direccion=" + direccion + ", cedula=" + cedula + '}';
     }
-    
+
+
     
     
 }

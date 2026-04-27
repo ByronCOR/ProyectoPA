@@ -22,12 +22,19 @@ public class BDProducto {
     ConexionR BLcon = new ConexionR();
 
     public int InsertarProducto(Producto objProducto) throws ClassNotFoundException, SQLException {
-        String Sentencia = "INSERT INTO Producto(nombre, descripcion, precio)"
-                + "VALUES(?,?,?)";
+        String Sentencia = "INSERT INTO Producto("
+                + "nombre,"
+                + "descripcion,"
+                + "precio,"
+                + "categoria,"
+                + "disponible)"
+                + "VALUES(?,?,?,?,?)";
         PreparedStatement ps = BLcon.getConnection().prepareStatement(Sentencia);
         ps.setString(1, objProducto.getNombre());
         ps.setString(2, objProducto.getDescripcion());
         ps.setDouble(3, objProducto.getPrecio());
+        ps.setString(4, objProducto.getCategoria());
+        ps.setBoolean(5, objProducto.isDisponible());
         return ps.executeUpdate();
     }
 
