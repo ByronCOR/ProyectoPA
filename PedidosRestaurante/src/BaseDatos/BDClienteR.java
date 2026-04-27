@@ -21,7 +21,7 @@ public class BDClienteR {
             +"VALUES(?,?,?,?,?,?)";
     PreparedStatement ps =BLcon.getConnection().prepareStatement(Sentencia);
     ps.setString(1, objCliente.getNombres());
-    ps.setString(1, objCliente.getApellidos());
+    ps.setString(2, objCliente.getApellidos());
     ps.setString(3, objCliente.getCorreo());
     ps.setString(4, objCliente.getTelefono());
     ps.setString(5, objCliente.getDireccion());

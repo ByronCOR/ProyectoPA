@@ -25,13 +25,11 @@ public class BDEntrega {
                 + "nombreReceptor, "
                 + "idPedido, "
                 + "idUsuario)"
-                + "VALUES(?,?,?,?,?)";
+                + "VALUES(NOW(),NOW(),?,?,?)";
         PreparedStatement ps = BLcon.getConnection().prepareStatement(Sentencia);
-        ps.setString(1, objEntrega.getFechaHoraSalida());
-        ps.setString(1, objEntrega.getFechaHoraEntrega());
-        ps.setString(3, objEntrega.getNombreReceptor());
-        ps.setInt(4, objEntrega.getPedido().getIdPed());
-        ps.setInt(5, objEntrega.getUsuario().getIdUsuario());
+        ps.setString(1, objEntrega.getNombreReceptor());
+        ps.setInt(2, objEntrega.getPedido().getIdPed());
+        ps.setInt(3, objEntrega.getUsuario().getIdUsuario());
         return ps.executeUpdate();
     }
 }

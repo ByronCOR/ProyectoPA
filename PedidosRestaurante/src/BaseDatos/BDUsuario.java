@@ -23,7 +23,7 @@ public class BDUsuario {
                 + "VALUES(?,?,?,?,?,?)";
         PreparedStatement ps = BLcon.getConnection().prepareStatement(Sentencia);
         ps.setString(1, objUsuario.getNombres());
-        ps.setString(1, objUsuario.getApellidos());
+        ps.setString(2, objUsuario.getApellidos());
         ps.setString(3, objUsuario.getEmail());
         ps.setString(4, objUsuario.getClave());
         ps.setString(5, objUsuario.getRol());

@@ -10,12 +10,14 @@ import Clases.Pedido;
 
 import java.sql.SQLException;
 import java.sql.ResultSet;
+
 /**
  *
  * @author bdcordova
  */
 public class LogicaPedido {
-        BDPedido objBDPedido = new BDPedido();
+
+    BDPedido objBDPedido = new BDPedido();
 
     public void BuscarPedido(Pedido objPedido) throws
             ClassNotFoundException, SQLException {
@@ -35,6 +37,7 @@ public class LogicaPedido {
             } else {
                 objPedido.setEstado(EstadoPedido.PENDIENTE.getValor());
                 objBDPedido.InsertarPedido(objPedido);
+                BuscarPedido(objPedido);
                 return true;
             }
         } else {

@@ -18,7 +18,7 @@ public class ConexionR {
     public Connection getConnection( ) throws ClassNotFoundException, SQLException{
     
         String driver="com.mysql.cj.jdbc.Driver";    
-        String url= "jdbc:mysql://localhost:3306/restaurante_jdbc";
+        String url= "jdbc:mysql://localhost:3306/db_gestion_pedidos_restaurante";
         Class.forName(driver);
         return DriverManager.getConnection(url,"root","abeja");
       

@@ -29,14 +29,14 @@ public class BDPedido {
                 + "total,"
                 + "estado,"
                 + "idCliente)"
-                + "VALUES(?,?,?,?,?,?)";
+                + "VALUES(NOW(),?,?,?,?,?)";
         PreparedStatement ps = BLcon.getConnection().prepareStatement(Sentencia);
-        ps.setString(1, objPedido.getFechaHoraRegistro());
-        ps.setString(2, objPedido.getCodigo());
-        ps.setString(3, objPedido.getDireccion_entrega());
-        ps.setDouble(4, objPedido.getTotal());
-        ps.setString(5, objPedido.getEstado());
-        ps.setInt(6, objPedido.getCliente().getIdClie());
+
+        ps.setString(1, objPedido.getCodigo());
+        ps.setString(2, objPedido.getDireccion_entrega());
+        ps.setDouble(3, objPedido.getTotal());
+        ps.setString(4, objPedido.getEstado());
+        ps.setInt(5, objPedido.getCliente().getIdClie());
 
         return ps.executeUpdate();
     }

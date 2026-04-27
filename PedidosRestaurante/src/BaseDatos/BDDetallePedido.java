@@ -26,7 +26,7 @@ public class BDDetallePedido {
                 + "VALUES(?,?,?,?,?)";
         PreparedStatement ps = BLcon.getConnection().prepareStatement(Sentencia);
         ps.setInt(1, objDetallePedido.getCantidad());
-        ps.setDouble(1, objDetallePedido.getPrecioUnitario());
+        ps.setDouble(2, objDetallePedido.getPrecioUnitario());
         ps.setDouble(3, objDetallePedido.getSubtotal());
         ps.setInt(4, objDetallePedido.getPedido().getIdPed());
         ps.setInt(5, objDetallePedido.getProducto().getIdProd());

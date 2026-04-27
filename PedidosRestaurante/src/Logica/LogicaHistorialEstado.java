@@ -20,6 +20,7 @@ public class LogicaHistorialEstado {
             throws ClassNotFoundException, SQLException {
 
         if (objHistorialEstado.getPedido().getIdPed() != 0) {
+            
             objBDHistorialEstado.InsertarHistorialEstado(objHistorialEstado);
             return true;
         } else {
