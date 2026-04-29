@@ -94,7 +94,9 @@ public class Pedido {
 
     @Override
     public String toString() {
-        return "Pedido{" + "idPed=" + idPed + ", fechaHoraRegistro=" + fechaHoraRegistro + ", codigo=" + codigo + ", estado=" + estado + ", direccion_entrega=" + direccion_entrega + ", total=" + total + ", cliente=" + cliente + '}';
+        return "Pedido{" + "idPed=" + idPed 
+                + ", fechaHoraRegistro=" + fechaHoraRegistro 
+                + ", codigo=" + codigo + ", estado=" + estado + ", direccion_entrega=" + direccion_entrega + ", total=" + total + ", cliente=" + cliente + '}';
     }
 
 }
